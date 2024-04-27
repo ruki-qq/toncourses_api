@@ -2,13 +2,14 @@ from datetime import datetime
 
 from sqlalchemy import String, func
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy_utils import EmailType
 
 from .base import Base
 
 
 class User(Base):
     username: Mapped[str] = mapped_column(String(16), unique=True)
-    email: Mapped[str | None] = mapped_column(String(128), unique=True)
+    email: Mapped[str | None] = mapped_column(EmailType, unique=True)
     first_name: Mapped[str] = mapped_column(String(64))
     last_name: Mapped[str] = mapped_column(String(64))
     register_at: Mapped[datetime] = mapped_column(
