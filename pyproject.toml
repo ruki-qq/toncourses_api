@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "toncourses-api"
+version = "0.1.0"
+description = ""
+authors = ["fam1ne"]
+readme = "README.md"
+packages = [{include = "toncourses_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110.2"
+pydantic = {extras = ["email"], version = "^2.7.1"}
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.29"}
+uvicorn = "^0.29.0"
+pydantic-settings = "^2.2.1"
+alembic = "^1.13.1"
+asyncpg = "^0.29.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.2"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
